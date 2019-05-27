@@ -9,7 +9,10 @@ Step: passo para variar o tamanho do problema do start até o stop
 nIterations: número de vezes que executaremos o algoritmo de execução a cada passo
 
 #No Terminal
+./algoritmosOrdenacaoJava.exe start stop step nIterations
 
+Ex.:
+./algoritmosOrdenacaoJava.exe 10 100 10 10
 
 #Nomes dos arquivos
 Adotamos a nomenclatura de nomeAlgoritmoOrdencao_Iinicio_Ffim_Ppasso_NnIteracoes.txt
