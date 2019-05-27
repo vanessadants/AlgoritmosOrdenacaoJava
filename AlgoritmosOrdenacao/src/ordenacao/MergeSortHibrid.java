@@ -84,7 +84,7 @@ public class MergeSortHibrid {
 		BufferedWriter buffW = new BufferedWriter (arq);
 		buffW.write ("mergeSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
         buffW.newLine ();
-        buffW.write ("Size= Array Size, mean= Mean Execution Time (milliseconds), standardDeviation = Standard Deviation (milliseconds)");
+        buffW.write ("Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)");
         buffW.newLine ();
 	  
 		
