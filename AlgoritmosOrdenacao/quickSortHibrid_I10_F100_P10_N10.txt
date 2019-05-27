@@ -1,0 +1,12 @@
+QuickSortHibrid: start=10, stop=100, step=10, nIterations=10
+Size= Array Size, mean= Mean Execution Time (milliseconds), standardDeviation = Standard Deviation (milliseconds)
+size=10, mean=4950, standardDeviation=1350
+size=20, mean=15390, standardDeviation=2290
+size=30, mean=31560, standardDeviation=2160
+size=40, mean=48200, standardDeviation=35800
+size=50, mean=22000, standardDeviation=7100
+size=60, mean=26230, standardDeviation=3630
+size=70, mean=38730, standardDeviation=9930
+size=80, mean=46300, standardDeviation=6900
+size=90, mean=41910, standardDeviation=5010
+size=100, mean=57510, standardDeviation=27410

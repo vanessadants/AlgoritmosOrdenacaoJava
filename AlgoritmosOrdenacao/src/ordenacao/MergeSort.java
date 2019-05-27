@@ -56,9 +56,10 @@ public class MergeSort {
 			int stop,
 			int step,
 			int nIterations,
-			int LIMITE_ALEATORIO) throws IOException{
+			int LIMITE_ALEATORIO,
+			String nomeFile) throws IOException{
 		
-		FileWriter arq = new FileWriter("mergeSort.txt");
+		FileWriter arq = new FileWriter(nomeFile);
 		BufferedWriter buffW = new BufferedWriter (arq);
 		buffW.write ("MergeSort: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
         buffW.newLine ();

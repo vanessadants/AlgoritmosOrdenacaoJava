@@ -1,0 +1,12 @@
+MergeSort: start=10, stop=100, step=10, nIterations=10
+Size= Array Size, mean= Mean Execution Time (milliseconds), standardDeviation = Standard Deviation (milliseconds)
+size=10, mean=5450, standardDeviation=2450
+size=20, mean=11920, standardDeviation=4720
+size=30, mean=19690, standardDeviation=8190
+size=40, mean=17410, standardDeviation=1210
+size=50, mean=17740, standardDeviation=10340
+size=60, mean=12510, standardDeviation=3910
+size=70, mean=8950, standardDeviation=2350
+size=80, mean=10430, standardDeviation=3030
+size=90, mean=9940, standardDeviation=1340
+size=100, mean=15470, standardDeviation=6170
