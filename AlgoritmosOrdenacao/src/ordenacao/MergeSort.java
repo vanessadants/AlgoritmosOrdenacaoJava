@@ -1,8 +1,11 @@
 package ordenacao;
-import java.util.Arrays;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
 
 public class MergeSort {
-
+	
 	private static void merge(float[] A, int p, int q, int r) {
 		int k, i, j;
 		int n1=q-p+1;
@@ -36,7 +39,7 @@ public class MergeSort {
 		
 	}
     
-	public static void mergeSort(float[] A, int p, int r) { 
+	private static void mergeSort(float[] A, int p, int r) { 
 		if(p<r) { 
 			int q=(p+r)/2;
 			mergeSort(A,p,q);
@@ -45,14 +48,59 @@ public class MergeSort {
 		}
 	}
 	
-	public static void mergeSort(float[] A) { 
+	private static void mergeSort(float[] A) { 
 		mergeSort(A,0,A.length-1);
 	}
-	public static void main(String[] args) {
-		float[] A = {3, 5, (float) 2.5 , 6, (float) 9.1, (float)1.1,8,9,1};
-		System.out.println(Arrays.toString(A));
-		mergeSort(A);
-		System.out.println(Arrays.toString(A));
+	public static void executar(
+			int start,
+			int stop,
+			int step,
+			int nIterations,
+			int LIMITE_ALEATORIO) throws IOException{
+		
+		FileWriter arq = new FileWriter("mergeSort.txt");
+		BufferedWriter buffW = new BufferedWriter (arq);
+		buffW.write ("MergeSort: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
+        buffW.newLine ();
+        buffW.write ("Size= Array Size, mean= Mean Execution Time (milliseconds), standardDeviation = Standard Deviation (milliseconds)");
+        buffW.newLine ();
+	  
+		
+		/*Define problem size*/ 
+		for (int i=start;i<=stop;i=i+step) {
+			/*Repeat experiment nIteration times*/
+			long meanExecutionTime=0;
+			long minExecutionTime=Long.MAX_VALUE;
+			for(int j=0;j<nIterations;j++) {
+				/*Initialize array*/
+				float[] A= new float[i];
+				Random random = new Random();
+				for(int k=0;k<i;k++) {
+					A[k]=random.nextFloat()*LIMITE_ALEATORIO;
+				}
+				
+				//System.out.println(Arrays.toString(A));
+				
+				/*Measure execution time*/
+				long startTime = System.nanoTime();
+				mergeSort(A);
+				long executionTime= System.nanoTime() - startTime;
+				
+				meanExecutionTime+=executionTime;
+				if(executionTime<minExecutionTime) {
+					minExecutionTime=executionTime;
+				}
+				
+				//System.out.println(Arrays.toString(A));	
+			}
+			meanExecutionTime=meanExecutionTime/nIterations;
+			long standardDeviation = meanExecutionTime-minExecutionTime;
+			/*Save problemSize, meanExecutionTime, standardDeviation*/
+			buffW.write ("size="+i+", mean="+meanExecutionTime+", standardDeviation="+standardDeviation);
+	        buffW.newLine ();
+		}
+		buffW.close ();
+		arq.close();
 	}
 	
 }

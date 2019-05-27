@@ -1,27 +1,68 @@
 package ordenacao;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-public class InsertionSort {
-
-	private static void insertionSort(float[] A) {
+public class QuickSortHibrid {
+	private static final int LIMITE=100;
+	
+	private static void exchange(float[] A, int i, int j) {
+		float aux=A[i];
+		A[i]=A[j];
+		A[j]=aux;
+	}
+	
+	private static int insertionSort(float[] A, int p, int r) {
 		float key;
 		int i, j;
-		for(j=1; j<A.length; j++) {
+		for(j=p+1; j<=r; j++) {
 			key = A[j];
 			i = j-1;
-			while(i>=0 && A[i]>key) {
+			while(i>=p && A[i]>key) {
 				A[i+1] = A[i];
 				i--;
 			}
 			A[i+1]=key;
 		}
+		return r;
+	}
+	
+	private static int partition(float[] A, int p, int r) {
+		int i, j;
+		float x;
+		
+		x=A[r];
+		i=p-1;
+		for(j=p; j<r ;j++) {
+			if(A[j]<=x) {
+				i++;
+				exchange(A,i,j);
+			}
+		}
+		exchange(A,i+1,r);
+		return i+1;
+		
+	}
+	
+	private static int partitionHibrido(float[] A, int p, int r) {
+		if(r-p+1<LIMITE) {
+			return insertionSort(A, p, r);
+		}
+		return partition(A, p, r);
+		
 	}
     
-
+	private static void quickSort(float[] A, int p, int r) { 
+		if(p<r) { 
+			int q=partitionHibrido(A,p,r);
+			quickSort(A,p,q-1);
+			quickSort(A,q+1,r);
+		}
+	}
+	private static void quickSort(float[] A) { 
+		quickSort(A,0,A.length-1);
+	}
 	public static void executar(
 			int start,
 			int stop,
@@ -29,9 +70,9 @@ public class InsertionSort {
 			int nIterations,
 			int LIMITE_ALEATORIO) throws IOException{
 		
-		FileWriter arq = new FileWriter("insertionSort.txt");
+		FileWriter arq = new FileWriter("quickSortHibrid.txt");
 		BufferedWriter buffW = new BufferedWriter (arq);
-		buffW.write ("InsertionSort: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
+		buffW.write ("QuickSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
         buffW.newLine ();
         buffW.write ("Size= Array Size, mean= Mean Execution Time (milliseconds), standardDeviation = Standard Deviation (milliseconds)");
         buffW.newLine ();
@@ -54,7 +95,7 @@ public class InsertionSort {
 				
 				/*Measure execution time*/
 				long startTime = System.nanoTime();
-				insertionSort(A);
+				quickSort(A);
 				long executionTime= System.nanoTime() - startTime;
 				
 				meanExecutionTime+=executionTime;
@@ -73,4 +114,5 @@ public class InsertionSort {
 		buffW.close ();
 		arq.close();
 	}
+	
 }
