@@ -3,7 +3,7 @@ Este repositório contém a implementação de alguns algoritmos de ordenação 
 
 #Para executar
 
-args consist of 6 arguments:start, stop, step, nIterations, LIMITE_ALEATORIO;
+args consist of 5 arguments:start, stop, step, nIterations, LIMITE_ALEATORIO;
 
 Start: tamanho inicial do problema
 
