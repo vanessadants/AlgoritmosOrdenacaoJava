@@ -1,0 +1,12 @@
+QuickSort: start=10, stop=100, step=10, nIterations=100
+Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)
+size=10, mean=2046, standardDeviation=946
+size=20, mean=1985, standardDeviation=685
+size=30, mean=1582, standardDeviation=382
+size=40, mean=1985, standardDeviation=385
+size=50, mean=2433, standardDeviation=233
+size=60, mean=2993, standardDeviation=293
+size=70, mean=4103, standardDeviation=803
+size=80, mean=4277, standardDeviation=377
+size=90, mean=4899, standardDeviation=499
+size=100, mean=5572, standardDeviation=472

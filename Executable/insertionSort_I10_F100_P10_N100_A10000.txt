@@ -1,0 +1,12 @@
+InsertionSort: start=10, stop=100, step=10, nIterations=100
+Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)
+size=10, mean=886, standardDeviation=286
+size=20, mean=1740, standardDeviation=1240
+size=30, mean=1668, standardDeviation=668
+size=40, mean=2434, standardDeviation=734
+size=50, mean=3326, standardDeviation=1126
+size=60, mean=4219, standardDeviation=919
+size=70, mean=5546, standardDeviation=1246
+size=80, mean=7083, standardDeviation=1683
+size=90, mean=10931, standardDeviation=4131
+size=100, mean=16468, standardDeviation=8068

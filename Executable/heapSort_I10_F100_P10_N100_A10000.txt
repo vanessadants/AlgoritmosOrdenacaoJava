@@ -1,0 +1,12 @@
+HeapSort: start=10, stop=100, step=10, nIterations=100
+Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)
+size=10, mean=3675, standardDeviation=2875
+size=20, mean=2234, standardDeviation=734
+size=30, mean=2360, standardDeviation=560
+size=40, mean=3025, standardDeviation=425
+size=50, mean=3901, standardDeviation=401
+size=60, mean=5070, standardDeviation=670
+size=70, mean=4486, standardDeviation=1486
+size=80, mean=4340, standardDeviation=640
+size=90, mean=5004, standardDeviation=1004
+size=100, mean=5441, standardDeviation=541
