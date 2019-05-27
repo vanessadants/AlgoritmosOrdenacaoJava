@@ -3,7 +3,7 @@ Este repositório contém a implementação de alguns algoritmos de ordenação 
 
 #Para executar
 
-args consist of 5 arguments:start, stop, step, n Iterations;
+args consist of 5 arguments:start, stop, step, nIterations;
 
 Start: tamanho inicial do problema
 
@@ -11,7 +11,7 @@ Stop: tamanho final do problema
 
 Step: passo para variar o tamanho do problema do start até o stop
 
-nIterations: número de vezes que executaremos o algoritmo de execução a cada passo
+nIterations: número de vezes que executaremos o algoritmo de ordenação a cada passo
 
 #No Terminal Windows
 
