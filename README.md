@@ -8,7 +8,7 @@ Stop: tamanho final do problema
 Step: passo para variar o tamanho do problema do start até o stop
 nIterations: número de vezes que executaremos o algoritmo de execução a cada passo
 
-#No Terminal
+#No Terminal Windows
 ./algoritmosOrdenacaoJava.exe start stop step nIterations
 
 Ex.:
