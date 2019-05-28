@@ -13,7 +13,7 @@ public class QuickSortHibrid {
 		A[j]=aux;
 	}
 	
-	private static int insertionSort(float[] A, int p, int r) {
+	private static void insertionSort(float[] A, int p, int r) {
 		float key;
 		int i, j;
 		for(j=p+1; j<=r; j++) {
@@ -25,7 +25,6 @@ public class QuickSortHibrid {
 			}
 			A[i+1]=key;
 		}
-		return r;
 	}
 	
 	private static int partition(float[] A, int p, int r) {
@@ -44,18 +43,12 @@ public class QuickSortHibrid {
 		return i+1;
 		
 	}
-	
-	private static int partitionHibrido(float[] A, int p, int r) {
-		if(r-p+1<LIMITE) {
-			return insertionSort(A, p, r);
-		}
-		return partition(A, p, r);
-		
-	}
-    
+
 	private static void quickSort(float[] A, int p, int r) { 
-		if(p<r) { 
-			int q=partitionHibrido(A,p,r);
+		if(r-p+1<LIMITE) {
+			insertionSort(A, p, r);
+		}else if(p<r) { 
+			int q=partition(A,p,r);
 			quickSort(A,p,q-1);
 			quickSort(A,q+1,r);
 		}
@@ -75,7 +68,7 @@ public class QuickSortHibrid {
 		QuickSortHibrid.LIMITE=LIMITE;
 		FileWriter arq = new FileWriter(nomeFile);
 		BufferedWriter buffW = new BufferedWriter (arq);
-		buffW.write ("QuickSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
+		buffW.write ("QuickSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations+", Limite Insertion/quick="+LIMITE);
         buffW.newLine ();
         buffW.write ("Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)");
         buffW.newLine ();

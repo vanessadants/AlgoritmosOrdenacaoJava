@@ -53,20 +53,14 @@ public class MergeSortHibrid {
 		}
 	
 	}
-	private static void mergeHibrido(float[] A, int p, int q, int r) {
-		if(r-q+1<LIMITE) {
-			insertionSort(A, p, r);
-		}else {
-			merge(A, p, q, r);
-		}
-	
-	}
 	private static void mergeSort(float[] A, int p, int r) { 
-		if(p<r) { 
+		if(r-p+1<LIMITE) {
+			insertionSort(A, p, r);
+		}else if(p<r) { 
 			int q=(p+r)/2;
 			mergeSort(A,p,q);
 			mergeSort(A,q+1,r);
-			mergeHibrido(A,p,q,r);
+			merge(A,p,q,r);
 		}
 	}
 	private static void mergeSort(float[] A) { 
@@ -84,7 +78,7 @@ public class MergeSortHibrid {
 		MergeSortHibrid.LIMITE=LIMITE;
 		FileWriter arq = new FileWriter(nomeFile);
 		BufferedWriter buffW = new BufferedWriter (arq);
-		buffW.write ("mergeSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
+		buffW.write ("mergeSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations+", Limite Insertion/merge="+LIMITE);
         buffW.newLine ();
         buffW.write ("Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)");
         buffW.newLine ();
