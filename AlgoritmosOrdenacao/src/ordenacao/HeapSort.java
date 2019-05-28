@@ -97,7 +97,7 @@ public class HeapSort {
 			meanExecutionTime=meanExecutionTime/nIterations;
 			long standardDeviation = meanExecutionTime-minExecutionTime;
 			/*Save problemSize, meanExecutionTime, standardDeviation*/
-			buffW.write ("size="+i+", mean="+meanExecutionTime+", standardDeviation="+standardDeviation);
+			buffW.write (i+" "+meanExecutionTime+" "+standardDeviation);
 	        buffW.newLine ();
 		}
 		buffW.close ();

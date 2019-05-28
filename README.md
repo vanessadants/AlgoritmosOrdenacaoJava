@@ -3,7 +3,7 @@ Este repositório contém a implementação de alguns algoritmos de ordenação 
 
 #Para executar
 
-args consist of 5 arguments:start, stop, step, nIterations, LIMITE_ALEATORIO;
+args consist of 6 arguments:start, stop, step, nIterations, LIMITE_ALEATORIO, LIMITE;
 
 Start: tamanho inicial do problema
 
@@ -15,12 +15,14 @@ nIterations: número de vezes que executaremos o algoritmo de ordenação a cada
 
 LIMITE_ALEATORIO: o algoritmo utiliza um array de números aleatórios variando de 0 até LIMITE_ALEATORIO
 
+LIMITE:define a partir de que tamanho utilizaremos insertion sort para os algoritmos híbridos
+
 #No Terminal Windows
 
-./algoritmosOrdenacaoJava.exe start stop step nIterations LIMITE_ALEATORIO
+./algoritmosOrdenacaoJava.exe start stop step nIterations LIMITE_ALEATORIO LIMITE
 
 Ex.:
-./algoritmosOrdenacaoJava.exe 10 100 10 10 10000000
+./algoritmosOrdenacaoJava.exe 10 100 10 10 10000000 100
 
 #Nomes dos arquivos
 

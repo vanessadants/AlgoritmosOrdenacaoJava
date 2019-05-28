@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Random;
 
 public class QuickSortHibrid {
-	private static final int LIMITE=100;
+	public static int LIMITE;
 	
 	private static void exchange(float[] A, int i, int j) {
 		float aux=A[i];
@@ -69,8 +69,10 @@ public class QuickSortHibrid {
 			int step,
 			int nIterations,
 			int LIMITE_ALEATORIO,
+			int LIMITE,
 			String nomeFile) throws IOException{
 		
+		QuickSortHibrid.LIMITE=LIMITE;
 		FileWriter arq = new FileWriter(nomeFile);
 		BufferedWriter buffW = new BufferedWriter (arq);
 		buffW.write ("QuickSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
@@ -109,7 +111,7 @@ public class QuickSortHibrid {
 			meanExecutionTime=meanExecutionTime/nIterations;
 			long standardDeviation = meanExecutionTime-minExecutionTime;
 			/*Save problemSize, meanExecutionTime, standardDeviation*/
-			buffW.write ("size="+i+", mean="+meanExecutionTime+", standardDeviation="+standardDeviation);
+			buffW.write (i+" "+meanExecutionTime+" "+standardDeviation);
 	        buffW.newLine ();
 		}
 		buffW.close ();

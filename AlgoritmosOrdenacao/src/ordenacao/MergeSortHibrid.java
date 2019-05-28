@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class MergeSortHibrid {
 	
-	private static final int LIMITE=100;
+	public static int LIMITE;
 
 	private static void insertionSort(float[] A, int p, int r) {
 		float key;
@@ -78,8 +78,10 @@ public class MergeSortHibrid {
 			int step,
 			int nIterations,
 			int LIMITE_ALEATORIO,
+			int LIMITE,
 			String nomeFile) throws IOException{
 		
+		MergeSortHibrid.LIMITE=LIMITE;
 		FileWriter arq = new FileWriter(nomeFile);
 		BufferedWriter buffW = new BufferedWriter (arq);
 		buffW.write ("mergeSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations);
@@ -118,7 +120,7 @@ public class MergeSortHibrid {
 			meanExecutionTime=meanExecutionTime/nIterations;
 			long standardDeviation = meanExecutionTime-minExecutionTime;
 			/*Save problemSize, meanExecutionTime, standardDeviation*/
-			buffW.write ("size="+i+", mean="+meanExecutionTime+", standardDeviation="+standardDeviation);
+			buffW.write (i+" "+meanExecutionTime+" "+standardDeviation);
 	        buffW.newLine ();
 		}
 		buffW.close ();
