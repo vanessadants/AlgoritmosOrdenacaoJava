@@ -70,7 +70,7 @@ public class QuickSortHibrid {
 		BufferedWriter buffW = new BufferedWriter (arq);
 		buffW.write ("QuickSortHibrid: start="+start+", stop="+stop+", step="+step+", nIterations="+nIterations+", Limite Insertion/quick="+LIMITE);
         buffW.newLine ();
-        buffW.write ("Size= Array Size, mean= Mean Execution Time (nanoseconds), standardDeviation = Standard Deviation (nanoseconds)");
+        buffW.write ("Size= Array Size, mean= Mean Execution Time (nanoseconds)");
         buffW.newLine ();
 	  
 		
@@ -78,7 +78,7 @@ public class QuickSortHibrid {
 		for (int i=start;i<=stop;i=i+step) {
 			/*Repeat experiment nIteration times*/
 			long meanExecutionTime=0;
-			long minExecutionTime=Long.MAX_VALUE;
+			
 			for(int j=0;j<nIterations;j++) {
 				/*Initialize array*/
 				float[] A= new float[i];
@@ -95,16 +95,13 @@ public class QuickSortHibrid {
 				long executionTime= System.nanoTime() - startTime;
 				
 				meanExecutionTime+=executionTime;
-				if(executionTime<minExecutionTime) {
-					minExecutionTime=executionTime;
-				}
 				
 				//System.out.println(Arrays.toString(A));	
 			}
 			meanExecutionTime=meanExecutionTime/nIterations;
-			long standardDeviation = meanExecutionTime-minExecutionTime;
-			/*Save problemSize, meanExecutionTime, standardDeviation*/
-			buffW.write (i+" "+meanExecutionTime+" "+standardDeviation);
+
+			/*Save problemSize, meanExecutionTime*/
+			buffW.write (i+" "+meanExecutionTime);
 	        buffW.newLine ();
 		}
 		buffW.close ();

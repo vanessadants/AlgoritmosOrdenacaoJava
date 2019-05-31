@@ -2,8 +2,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\Vanessa\Downloads\EstruturaDados\AlgoritmosOrdenacaoJava\Executable\algoritmosOrdenacaoJava.jar</jar>
-  <outfile>C:\Users\Vanessa\Downloads\EstruturaDados\AlgoritmosOrdenacaoJava\Executable\algoritmosOrdenacaoJava.exe</outfile>
+  <jar>C:\Desenvolvimento\projetos\workspaceED\AlgoritmosOrdenacaoJava\Executable\algoritmosOrdenacaoJava.jar</jar>
+  <outfile>C:\Desenvolvimento\projetos\workspaceED\AlgoritmosOrdenacaoJava\Executable\algoritmosOrdenacaoJava.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
